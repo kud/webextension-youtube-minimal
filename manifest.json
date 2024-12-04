@@ -1,0 +1,24 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Minimal",
+  "version": "1.0.0",
+  "description": "A minimalistic YouTube extension",
+  "author": "Erwann Mest <m@kud.io>",
+  "icons": {
+    "16": "public/icon.svg",
+    "48": "public/icon.svg",
+    "128": "public/icon.svg"
+  },
+  "content_scripts": [
+    {
+      "css": ["src/styles/styles.css"],
+      "js": ["src/content/content.js"],
+      "matches": ["https://*.youtube.com/*"],
+      "exclude_matches": ["https://music.youtube.com/*"]
+    }
+  ],
+  "action": {
+    "default_popup": "src/popup/popup.html"
+  },
+  "permissions": ["storage"]
+}
